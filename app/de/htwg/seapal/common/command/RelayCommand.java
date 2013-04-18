@@ -1,4 +1,4 @@
-package de.htwg.seapal.maps.views.tui;
+package de.htwg.seapal.common.command;
 
 public abstract class RelayCommand implements ICommand {
 

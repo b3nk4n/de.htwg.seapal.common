@@ -5,8 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import de.htwg.seapal.common.plugin.Plugin;
+import de.htwg.seapal.common.observer.IObserver;
+import de.htwg.seapal.common.observer.Event;
+import de.htwg.seapal.common.command.ICommand;
 
-public abstract class PluginTextUI implements Plugin, de.htwg.seapal.person.util.observer.IObserver {
+public abstract class PluginTextUI implements Plugin, IObserver {
 
 	/**
 	 * The scanner for reading input.
@@ -134,7 +137,7 @@ public abstract class PluginTextUI implements Plugin, de.htwg.seapal.person.util
 	 * Updates the text UI.
 	 */
 	@Override
-	public void update(de.htwg.seapal.person.util.observer.Event arg0) {
+	public void update(Event event) {
 		printTUI();
 	}
 
