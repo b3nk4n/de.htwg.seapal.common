@@ -1,9 +1,11 @@
 package de.htwg.seapal.common.observer;
 
-import de.htwg.util.observer.Event;
-
+import de.htwg.seapal.common.observer.Event;
 
 public interface IObserver {
-	void update(Event e);
-
+	/**
+	 * Updates the observer.
+	 * @param event The update event.
+	 */
+	void update(Event event);
 }
