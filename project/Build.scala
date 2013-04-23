@@ -9,7 +9,10 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     // Add your project dependencies here,
-    "com.google.inject" % "guice" % "3.0"
+    "com.google.inject" % "guice" % "3.0",
+    "com.google.inject.extensions" % "guice-multibindings" % "3.0",
+    "com.google.inject.extensions" % "guice-assistedinject" % "3.0",
+    "de.devsurf.injection.guice.scanner" % "de.devsurf.injection.guice.scanner.asm" % "0.8.7"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
