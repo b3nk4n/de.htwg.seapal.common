@@ -27,13 +27,14 @@ public class HookRegistry {
 		hooks.get(hookName).add(handler);
 	}
 	
-	@SuppressWarnings("unchecked")
 	public <ReturnType, ArgType> List<HookHandler<ReturnType, ArgType>> getHooks(String hookName, Class<ReturnType> ret, Class<ArgType> arg){
 		List<HookHandler<ReturnType, ArgType>> hooksReturn = new LinkedList<HookHandler<ReturnType,ArgType>>();
 		
 		if(hooks.containsKey(hookName)){
 			for(HookHandler<?,?> hook : hooks.get(hookName)){
-				hooksReturn.add((HookHandler<ReturnType, ArgType>) hook);
+				if(ret.isAssignableFrom(hook.getReturnType()) && arg.isAssignableFrom(hook.getArgType())){
+					hooksReturn.add((HookHandler<ReturnType, ArgType>) hook);
+				}
 			}
 		}
 
