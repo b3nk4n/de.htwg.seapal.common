@@ -10,6 +10,10 @@ public abstract class HookHandler<ReturnType, ArgType> {
 		this.argType = argType;
 	}
 	
+	public ReturnType execute(){
+		return execute(null);
+	}
+	
 	abstract public ReturnType execute(ArgType a);
 	
 	public Class<ReturnType> getReturnType(){
